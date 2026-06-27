@@ -4,12 +4,12 @@ import React, { useState, useEffect } from 'react'
 const Animaciones2 = () => {
   const [animacion] = useState(new Animated.Value(0))
   useEffect(() => {
-    Animated.timing(animacion, {
-       toValue: 450, //valor al que va a llegar
-       duration: 10000, //duracion de la animacion
-       useNativeDriver: true, // usar el driver nativo para mejor rendimiento
-    }).start();
-  }, [])
+  Animated.timing(animacion, {
+     toValue: 450, 
+     duration: 1000, // Reduced for testing
+     useNativeDriver: false // <-- This MUST be false for 'width'
+  }).start();
+}, [])
 
   return (
     <Animated.View style={[styles.caja, { width: animacion }]}>

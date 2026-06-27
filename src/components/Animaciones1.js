@@ -21,7 +21,8 @@ const Animaciones1 = () => {
 const styles = StyleSheet.create({
   texto: {
     fontSize: 20,
-    textAlign: 'center'
+    textAlign: 'center',
+    color: '#FFF'
   }
 })
 
