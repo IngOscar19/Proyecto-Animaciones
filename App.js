@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, SafeAreaView, Platform } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import AnimacionLista from './src/components/AnimacionLista';
+import AnimatedEjercicio from './src/components/AnimatedEjercicio';
+
+
 import Animaciones1 from './src/components/Animaciones1';
 import Animaciones2 from './src/components/Animaciones2';
 import Animaciones3 from './src/components/Animaciones3';
@@ -10,6 +14,7 @@ import Animaciones6 from './src/components/Animaciones6';
 import Animaciones7 from './src/components/Animaciones7';
 import Animaciones8 from './src/components/Animaciones8';
 import Animaciones9 from './src/components/Animaciones9';
+
 
 const ANIMACIONES = [
   { id: '1', nombre: 'Animación 1', desc: 'Opacidad básica', tech: 'Animated.View (Timing)', comp: Animaciones1 },
@@ -21,6 +26,8 @@ const ANIMACIONES = [
   { id: '7', nombre: 'Animación 7', desc: 'Efecto Parallax Scroll', tech: 'Animated.ScrollView (Event/Timing)', comp: Animaciones7 },
   { id: '8', nombre: 'Animación 8', desc: 'Entrada Escalonada de Lista', tech: 'Animated.FlatList (Timing/Spring)', comp: Animaciones8 },
   { id: '9', nombre: 'Animación 9', desc: 'Categorías Agrupadas', tech: 'Animated.SectionList (Timing/Spring)', comp: Animaciones9 },
+  { id: '10', nombre: 'Animación 10', desc: 'Animación de Lista Loop/Secuencia', tech: 'Animated.loop (Timing)', comp: AnimacionLista },
+  { id: '11', nombre: 'Animación 11', desc: 'Descenso, Expansión Elástica y Caída', tech: 'Animated (Sequence/Spring/Timing)', comp: AnimatedEjercicio },
 ];
 
 export default function App() {
@@ -34,7 +41,6 @@ export default function App() {
 
       {selectedAnim ? (
         <View style={styles.viewContainer}>
-          {/* Cabecera de Navegación de la Animación Activa */}
           <View style={styles.navigationHeader}>
             <TouchableOpacity
               style={styles.backButton}
@@ -54,8 +60,8 @@ export default function App() {
         </View>
       ) : (
         <ScrollView contentContainerStyle={styles.menuContainer} showsVerticalScrollIndicator={false}>
-          <Text style={styles.menuTitle}>Taller de Animaciones</Text>
-          <Text style={styles.menuSubtitle}>Explora las animaciones en React Native</Text>
+          <Text style={styles.menuTitle}>Animaciones</Text>
+
 
           <View style={styles.grid}>
             {ANIMACIONES.map((anim) => (
@@ -82,6 +88,7 @@ export default function App() {
     </SafeAreaView>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
